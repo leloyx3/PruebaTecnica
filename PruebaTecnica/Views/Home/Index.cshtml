@@ -1,0 +1,39 @@
+﻿@model List<string>
+
+@{
+    ViewData["Title"] = "Formulario de Contacto";
+}
+
+<h3>Formulario de Contacto.</h3>
+
+<form method="post" action="@Url.Action("Index", "Home")">
+    <div class="ClasePadre">
+        <div class="form-group">
+            <label for="NombreInput"> Nombre Completo </label>
+            <input type="text" class="form-control" id="NombreInput" name="NombreInput" placeholder=" Digitar nombre completo" />
+        </div>
+        <div class="form-group">
+            <label for="PaisInput"> Pais Origen </label>
+            <select class="form-control" id="PaisInput" name="PaisInput">
+                <option> Escoja el Pais </option>
+                <!-- Las opciones de los paises -->
+                @foreach (string item in Model)
+                {
+                    <option value="@item">@item</option>
+                }
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="NumberInput"> Numero Celular </label>
+            <input type="number" class="form-control" id="NumberInput" name="NumberInput" placeholder=" Digitar numero celular " />
+        </div>
+        <div class="form-group">
+            <label for="emailInput"> Correo Electronico </label>
+            <input type="email" class="form-control" id="emailInput" name="emailInput" placeholder=" Digitar correo electronico " />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="btnGuardar"> Guardar </button>
+        </div>
+    </div>
+</form>

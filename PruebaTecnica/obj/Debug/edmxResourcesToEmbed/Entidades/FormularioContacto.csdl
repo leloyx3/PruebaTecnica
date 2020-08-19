@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PruebaTecnicaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Formulario">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="Int32" Nullable="false" />
+    <Property Name="Pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Numero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="Binary" MaxLength="50" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="PruebaTecnicaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Formulario" EntityType="Self.Formulario" />
+  </EntityContainer>
+</Schema>

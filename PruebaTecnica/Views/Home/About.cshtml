@@ -1,0 +1,33 @@
+﻿@model List<PruebaTecnica.Entidades.Formulario>
+
+@{
+    ViewBag.Title = "Ver Cliente";
+}
+<!--h2>@ViewBag.Title.</h2-->
+<!--h3>@ViewBag.Message</h3!-->
+
+<h3>Aqui se puede visualizar los clientes insertados en el Formulario</h3>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Nombre Completo</th>
+            <th scope="col">Pais</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Correo Electronico</th>
+        </tr>
+    </thead>
+    <tbody>
+ 
+            @foreach (PruebaTecnica.Entidades.Formulario item in Model)
+            {
+                <tr>
+                <td value="@item.Nombre">@item.Nombre</td>
+                <td value="@item.Pais">@item.Pais</td>
+                <td value="@item.Numero">@item.Numero</td>
+                <td value="@item.Email">@item.Email</td>
+                    </tr>
+            }
+
+    </tbody>
+</table>
